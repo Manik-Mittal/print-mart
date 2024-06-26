@@ -1,38 +1,234 @@
-.App {
-  text-align: center;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f5f5;
+  color: #0e0000;
+  padding: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.company-name {
+  font-size: 1.6rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-links {
+  list-style: none;
+  display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-links li {
+  margin-right: 4rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #0e0000;
+}
+
+.nav-links li a:hover {
+  border: 1px solid green;
+  border-radius: 50px;
+  color: #022d1a;
+  /* font-size: 1.6rem; */
+  padding: 0.4rem;
+}
+/* 
+********************************
+register page styling
+********************************* */
+.register1{
   display: flex;
   flex-direction: column;
+  width: 30vw;
+  margin-left: 35vw; 
+  margin-top: 2rem;
+  border: 2px solid;
+  border-radius: 23px;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: large;
+  height: 70vh;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.register1>form>input{
+  display:block;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 13px;
+  padding: 0.2rem;
+
+}
+.register1>form>input[type='password']{
+  display:block;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 13px;
+  padding: 0.2rem;
+
+}
+.register1>form>button{
+  margin-left: 12%;
+  margin-top: 20px;
+  border-radius: 13px;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ************* */
+.nextpage{
+
+margin-left: 80vw;
 }
+.nextpage>button{
+padding: 10px;
+border-radius: 50%;
+text-decoration: none;
+background-color: white;
+
+}
+.nextpage>button:hover{
+background-color:#3f51b5;
+color: white;
+}
+/* ********************** */
+.register2{
+display: flex;
+margin-left: 20vw;
+
+}
+.register2.form{
+border: 2px solid black;
+margin: 10vh;
+}
+.register2 h6{
+display: inline;
+}
+.form-container form {
+border: 1px solid #ccc; 
+border-radius: 8px; 
+padding: 20px; 
+margin-left: 16px;
+margin-top: 20px;
+display: flex;
+align-items: center;
+
+flex-direction: column;
+width: 60vw;
+}
+.register2>.form-container>form>.input-group>input{
+
+text-align: center;
+border-radius: 10px;
+padding: 0.2rem;
+display: flex;
+align-items: center;
+
+}
+.register2>.form-container>form>.input-group>input{
+
+text-align: center;
+border-radius: 10px;
+padding: 0.2rem;
+display: flex;
+align-items: center;
+
+}
+.register2>.form-container>form>.input-group>textarea{
+display:block;
+text-align: center;
+margin-top: 10px;
+border-radius: 13px;
+padding: 0.2rem;
+
+}
+
+.input-group {
+display: flex;
+margin-bottom: 10px;
+}
+
+.input-group h6 {
+width: 250px; 
+margin:0; 
+}
+.input-group input,input[type='password'],
+.input-group textarea {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+
+}
+/* ************* */
+.banner{
+width: '100%';
+overflow: 'hidden';
+/* margin-left: 10vw;
+border-radius: 30px;
+margin-top: 10px; */
+
+
+}
+
+.buttons{
+display: flex;
+justify-content: space-between;
+}
+
+/* ******************************** */
+/* about seller */
+/* ******************************** */
+.user-info {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px; 
+border: 1px solid black; 
+margin-top: 30px;
+width: 60vw;
+margin-left: 26vw;
+border-radius: 30px;
+background-color:#0B60B0 ;
+}
+/* #ACE2E1 */
+.field {
+flex: 1;
+text-align: left; 
+margin-right: 20px; 
+
+}
+.field .key{
+background-color: #FEFDED;
+margin-top: 8px;
+border-radius: 15px;
+padding: 20px;
+}
+.value {
+flex: 2;
+display: flex;
+flex-direction: column;
+
+}
+
+.value-item {
+margin-bottom: 5px; 
+
+}
+/* ******************************** */
+
+
+/********************************* */
+/*About us */
+/********************************* */
+.contactus{
+background-color: #0B60B0;
+margin-top: 10vh;
+width: 70vw;
+margin-left: 13vw;
+border-radius: 30px;
+color:#F0EDCF;
+padding: 30px;
+
+}
+/********************************* */
