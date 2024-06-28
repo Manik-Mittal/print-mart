@@ -1,0 +1,51 @@
+/* admindetail.css */
+
+/* Container for the form */
+.admin-register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Form container */
+.admin-form-container {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Input fields */
+.admin-input-group {
+  margin-bottom: 15px;
+}
+
+.admin-input-group h6 {
+  margin-bottom: 5px;
+}
+
+.admin-input-group input[type='text'],input[type='password'],
+.admin-input-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* Submit button */
+.admin-submit-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.admin-submit-btn:hover {
+  background-color: #218838;
+}

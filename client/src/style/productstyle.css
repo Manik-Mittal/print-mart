@@ -1,0 +1,177 @@
+/* Product Details Container */
+.product-container {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Product Heading */
+.product-heading {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Product Name */
+.product-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Product Content */
+.product-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Product Image Container */
+.product-image-container {
+  margin-right: 20px;
+}
+
+/* Product Image */
+.product-image {
+
+  max-height: 500px;
+  max-width: 500px;
+}
+
+/* Product Info */
+.product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Product Description */
+.product-description {
+  margin-bottom: 10px;
+}
+
+/* Product Label */
+.product-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Product Value */
+.product-value {
+  font-style: italic;
+}
+
+/* Order Form */
+.order-form {
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Form Heading */
+.form-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* User Info */
+.user-info1 {
+  display: flex;
+  margin-top: 4vh;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #f0f0f0;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  width: 30vw;
+  border: 0px;
+  align-items: center;
+  margin-left: 0vw;
+
+}
+
+
+.form-field {
+  margin-bottom: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+
+.form-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  width: 100px;
+}
+
+
+.form-input {
+  width: 20rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 10px;
+  
+}
+
+/* Form Checkbox */
+.form-checkbox {
+  margin-right: 5px;
+  margin-left: 15px;
+  
+  
+}
+
+/* Form File Input */
+.form-file {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Button - SEND QUOTATION */
+.btn-send {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+ 
+}
+
+/* Button - Place Order */
+.btn-place {
+  padding: 10px 120px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 3vh;
+  margin-left: 5vw;
+}
+
+/* Button - Place Order (Hover) */
+.btn-place:hover {
+  background-color: #0056b3;
+}
+
+
+.similar-products-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.entire-box{
+
+  margin-left: 32vw;
+ 
+}
