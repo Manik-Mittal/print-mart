@@ -323,7 +323,7 @@ const Order = () => {
                 <p className="card-text"><strong>City:</strong> {quotation.city}</p>
                 <div className="card-text">
                   {quotation.pdf && (
-                    <button className="btn btn-primary mr-2" onClick={() => downloadPDF(quotation.pdf.data, `${quotation._id}.pdf`)}>
+                    <button className="btn btn-primary mr-2 " style={{ marginRight: '10px' }} onClick={() => downloadPDF(quotation.pdf.data, `${quotation._id}.pdf`)}>
                       Download PDF
                     </button>
                   )}

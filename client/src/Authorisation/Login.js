@@ -28,7 +28,11 @@ const Login = () => {
                 });
                 localStorage.setItem("auth", JSON.stringify(res.data));
                 // Redirect to home or any other page if login successful
-                Navigate('/home');
+                if (email.endsWith('@admin.com')) {
+                    Navigate(`/admin/${email}`);
+                } else {
+                    Navigate('/home');
+                }
             } else {
                 toast.error(res.data.message);
             }
