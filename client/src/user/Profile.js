@@ -4,7 +4,7 @@ import Layout from "./../Layout/Layout";
 import { useAuth } from "../context/auth";
 import { toast } from 'react-toastify';
 import axios from "axios"
-import '/Users/manikmittal/Documents/print-mart/client/src/style/user.css'
+import '../style/user.css'
 
 const Profile = () => {
     const [auth] = useAuth();

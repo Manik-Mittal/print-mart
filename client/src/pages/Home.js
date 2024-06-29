@@ -37,7 +37,7 @@ const Home = () => {
   const handleReset = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(`/api/v1/vendor/get-products`);
+      const { data } = await axios.get(`https://print-mart-2.onrender.com/api/v1/vendor/get-products`);
       setLoading(false);
       setProducts(data.allProduct);
     } catch (error) {
@@ -48,7 +48,7 @@ const Home = () => {
 
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8000/api/v1/vendor/getall-category");
+      const { data } = await axios.get("https://print-mart-2.onrender.com/api/v1/vendor/getall-category");
       if (data?.success) {
         setCategories(data.allCategories);
       }
@@ -67,7 +67,7 @@ const Home = () => {
       <div className='banner' style={{ position: 'relative' }}>
 
 
-        <img src="/images/design.png" style={{ width: '100vw', height: '92vh', opacity: 1 }} alt="Banner" />
+        <img src="/images/bg.png" style={{ width: '100vw', height: '92vh', opacity: 1 }} alt="Banner" />
         <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 1, textAlign: 'center', color: 'white' }}>
           <h1 style={{ fontSize: '5rem' }} className="typewriter">PRINT YOUR VISION</h1>
           <p style={{ fontSize: '2.5rem' }} className="typewriter">Your one-stop solution for all printing needs</p>
