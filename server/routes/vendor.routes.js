@@ -1,13 +1,13 @@
 import express from "express";
-import { 
-    createVendor, createCategory, updateCategory, getAllCategories, 
+import {
+    createVendor, createCategory, updateCategory, getAllCategories,
     singleCategory,
     deletingCategory,
     getVendor
 } from "../controllers/vendor.controllers.js"
 import {
-    addProduct, 
-    getAllProducts, getSingleProduct, 
+    addProduct,
+    getAllProducts, getSingleProduct,
     imageProduct
 } from "../controllers/product.controllers.js";
 import formidable from "express-formidable";
@@ -24,9 +24,10 @@ router.route("/single-category/:slug").get(singleCategory);
 router.route("/delete-category/:id").delete(deletingCategory)
 
 //routes for product related functions
-router.post("/create-product",formidable(),addProduct);
-router.get("/get-products",getAllProducts);
-router.get("/get-products/:slug",getSingleProduct);
-router.get("/get-product-image/:id",imageProduct);
+router.post("/create-product", formidable(), addProduct);
+router.get("/get-products/:name", getAllProducts);
+router.get("/get-products", getAllProducts);
+router.get("/get-products/:slug", getSingleProduct);
+router.get("/get-product-image/:id", imageProduct);
 
 export default router;

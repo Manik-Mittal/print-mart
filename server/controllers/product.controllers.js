@@ -143,10 +143,19 @@ export const addProduct = async (req, res) => {
 // get all the products 
 export const getAllProducts = async (req, res) => {
     try {
+
+        const name = req.params.name;
+        console.log(name, 34);
         // photo is not selected as it will increase the loading time and will hamper the performance
-        const allProduct = await Product.find({}).populate('category').populate('vendorName').select('-imageUrl').limit(15).sort({ createdAt: -1 });
+        const allProduct = await Product.find({  'vendorName.vendorName': name  })
+        .populate('category')
+        .populate('vendorName')
+        .select('-imageUrl')
+        .limit(15)
+        .sort({ createdAt: -1 });
         // here populate is used as category was a referenced field in schema to show full info of category
         // not just id
+        console.log(allProduct)
         res.status(200).json({
             success: true,
             message: "all the products are fetched successfully",
