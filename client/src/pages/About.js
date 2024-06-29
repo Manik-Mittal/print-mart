@@ -1,10 +1,11 @@
 import React from "react";
 import Layout from "../Layout/Layout";
+//import '/Users/manikmittal/Documents/print-mart/client/src/App.css';
 
 const About = () => {
   return (
     <Layout title={"About us"}>
-      <div className="row contactus ">
+      <div className=" contactus">
         <div className="col-md-6 ">
           <img
             src="/images/about.jpg"

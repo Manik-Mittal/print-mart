@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../Layout/Layout";
+import '/Users/manikmittal/Documents/print-mart/client/src/App.css';
 import { BiMailSend, BiPhoneCall, BiSupport } from "react-icons/bi";
 const Contact = () => {
   return (
