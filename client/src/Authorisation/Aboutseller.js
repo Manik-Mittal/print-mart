@@ -1,7 +1,7 @@
 import Layout from '../Layout/Layout'
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import '/Users/manikmittal/Documents/print-mart/client/src/App.css'
+// import '/Users/manikmittal/Documents/print-mart/client/src/App.css'
 import { useParams } from 'react-router-dom';
 
 
@@ -19,7 +19,7 @@ const Aboutseller = () => {
   const sellerDetails = async () => {
     try {
 
-      const { data } = await axios.get(`http://localhost:8000/api/v1/vendor/get-vendor/${params.vendorName}`);
+      const { data } = await axios.get(`https://print-mart-2.onrender.com/api/v1/vendor/get-vendor/${params.vendorName}`);
       console.log(data, 5332)
       console.log(data.fetchedVendor.vendorName, 123)
 

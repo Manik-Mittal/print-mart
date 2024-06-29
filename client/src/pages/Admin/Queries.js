@@ -21,7 +21,7 @@ const Queries = () => {
   const fetchData = async (email) => {
     try {
       console.log("Fetching data for email:", email);
-      const response = await axios.get(`http://localhost:8000/api/v1/user/get-quotations/${email}`);
+      const response = await axios.get(`https://print-mart-2.onrender.com/api/v1/user/get-quotations/${email}`);
       setQuotations(response.data.quotation);
       console.log(response.data.quotation, "iuiydidd");
     } catch (error) {

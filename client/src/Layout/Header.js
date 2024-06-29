@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
-import '/Users/manikmittal/Documents/print-mart/client/src/App.css'
+import '../../src/App.css'
 import { BsPrinterFill } from "react-icons/bs";
 import { useAuth } from "../context/auth";
 import { FaUserLarge } from "react-icons/fa6";

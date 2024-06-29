@@ -44,7 +44,7 @@ const UpdateProduct = () => {
   const getSingleProduct = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8000/api/v1/vendor/get-products/${params.slug}`
+        `https://print-mart-2.onrender.com/api/v1/vendor/get-products/${params.slug}`
       );
 
       if (Array.isArray(data.singleProduct) && data.singleProduct.length > 0) {
@@ -75,7 +75,7 @@ const UpdateProduct = () => {
   //get all category
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8000/api/v1/vendor/getall-category");
+      const { data } = await axios.get("https://print-mart-2.onrender.com/api/v1/vendor/getall-category");
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -111,7 +111,7 @@ const UpdateProduct = () => {
       console.log(id);
 
       const { data } = await axios.put(
-        `http://localhost:8000/api/v1/vendor/update-product/${id}`,
+        `https://print-mart-2.onrender.com/api/v1/vendor/update-product/${id}`,
         productData
       );
       console.log(data, 89)
@@ -198,7 +198,7 @@ const UpdateProduct = () => {
                 ) : (
                   <div className="text-center">
                     <img
-                      src={`http://localhost:8000/api/v1/vendor/get-product-image/${id}`}
+                      src={`https://print-mart-2.onrender.com/api/v1/vendor/get-product-image/${id}`}
                       alt="product_photo"
                       height={"200px"}
                       className="img img-responsive"

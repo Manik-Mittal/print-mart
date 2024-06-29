@@ -27,7 +27,7 @@ router.route("/delete-category/:id").delete(deletingCategory)
 router.post("/create-product", formidable(), addProduct);
 router.get("/get-products/:name", getAllProducts);
 router.get("/get-products", getAllProducts);
-router.get("/get-products/:slug", getSingleProduct);
+router.get("/getProduct/:slug", getSingleProduct);
 router.get("/get-product-image/:id", imageProduct);
 
 export default router;

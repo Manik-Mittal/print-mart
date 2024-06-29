@@ -19,7 +19,7 @@ const CreateCategory = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:8000/api/v1/vendor/create-category", { name });
+      const { data } = await axios.post("https://print-mart-2.onrender.com/api/v1/vendor/create-category", { name });
       if (data?.success) {
         toast.success(`${name} is created`);
         getAllCategory();

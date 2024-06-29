@@ -16,6 +16,7 @@ import userRoute from "./routes/user.routes.js";
 import vendorRoute from "./routes/vendor.routes.js";
 
 // //using routes
+
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/vendor", vendorRoute);
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Layout from '../Layout/Layout';
-import '/Users/manikmittal/Documents/print-mart/client/src/App.css';
+// import '/Users/manikmittal/Documents/print-mart/client/src/App.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -16,7 +16,7 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("http://localhost:8000/api/v1/user/login", {
+            const res = await axios.post("https://print-mart-2.onrender.com/api/v1/user/login", {
                 email, password
             });
             if (res && res.data.success) {

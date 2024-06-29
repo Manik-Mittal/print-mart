@@ -4,7 +4,7 @@ import Layout from "../Layout/Layout";
 import axios from "axios";
 import { toast } from 'react-toastify';
 import { NavLink, useNavigate, useParams } from "react-router-dom";
-import '/Users/manikmittal/Documents/print-mart/client/src/style/productstyle.css';
+import '../style/productstyle.css';
 
 const Productdetails = () => {
     const [auth] = useAuth();
@@ -26,7 +26,7 @@ const Productdetails = () => {
     const getProduct = async () => {
         try {
             if (!params.slug) return;
-            const { data } = await axios.get(`http://localhost:8000/api/v1/vendor/get-products/${params.slug}`);
+            const { data } = await axios.get(`https://print-mart-2.onrender.com/api/v1/vendor/getProduct/${params.slug}`);
             if (Array.isArray(data.singleProduct) && data.singleProduct.length > 0) {
                 const p = data.singleProduct[0];
 
@@ -75,7 +75,7 @@ const Productdetails = () => {
         }
         console.log(pdf)
         try {
-            const response = await axios.post('http://localhost:8000/api/v1/user/create-quotation', formData, {
+            const response = await axios.post('https://print-mart-2.onrender.com/api/v1/user/create-quotation', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -93,12 +93,12 @@ const Productdetails = () => {
     return (
         <Layout>
 
-            <div className="row container entire-box" style={{ marginTop: '5vh', display: 'flex', width: '30vw' }}>
-                <h1 className="product-title " style={{ marginLeft: '7vw' }}>Product Details</h1>
-                <h1 className="product-title " style={{ marginLeft: '0vw', textAlign: 'center' }}>{name}</h1>
+            <div className="row container entire-box" style={{ marginTop: '5vh', display: 'flex', width: '30vw', margin: 'auto' }}>
+                <h1 className="product-title " style={{ marginLeft: '4vw' }}>Product Details</h1>
+                <h1 className="product-title " style={{ textAlign: 'center' }}>{name}</h1>
                 <div className="product-details">
                     <div className="product-image">
-                        <img src={`http://localhost:8000/api/v1/vendor/get-product-image/${id}`} className="card-img-top" alt={name} height="400px" width="10px" />
+                        <img src={`https://print-mart-2.onrender.com/api/v1/vendor/get-product-image/${id}`} className="card-img-top" alt={name} height="400px" width="10px" />
                     </div>
                     <div className="product-info">
                         <div className="product-description">

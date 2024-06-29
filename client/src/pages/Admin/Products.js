@@ -15,7 +15,7 @@ const Products = () => {
     try {
       const name = params.name;
       console.log(name)
-      const { data } = await axios.get(`http://localhost:8000/api/v1/vendor/get-products/${name}`);
+      const { data } = await axios.get(`https://print-mart-2.onrender.com/api/v1/vendor/get-products/${name}`);
       setProducts(data.allProduct);
     } catch (error) {
       console.log(error);

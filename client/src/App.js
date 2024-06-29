@@ -1,4 +1,4 @@
-import '/Users/manikmittal/Documents/print-mart/client/src/App.css';
+
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -40,8 +40,8 @@ function App() {
         <Route path='/radmin' element={<RegisterAdmin />} />
         <Route path='/admindetails' element={<Admindetails />} />
         <Route path='/aboutseller/:vendorName' element={<Aboutseller />} />
-        <Route path='/*contact' element={<Contact />} />
-        <Route path='/*privacy' element={<Privacy />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/privacy' element={<Privacy />} />
         <Route path='/productdetails/:slug' element={<Productdetails />} />
         <Route path='/createorder' element={<Createorder />} />
         <Route path='/userdash' element={<Userdash />} />

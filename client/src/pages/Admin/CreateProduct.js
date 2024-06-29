@@ -24,7 +24,7 @@ const CreateProduct = () => {
   const getAllCategory = async () => {
     try {
 
-      const { data } = await axios.get("http://localhost:8000/api/v1/vendor/getall-category");
+      const { data } = await axios.get("https://print-mart-2.onrender.com/api/v1/vendor/getall-category");
       if (data?.success) {
         setCategories(data?.allCategories);
         console.log(data.allCategories)
@@ -64,7 +64,7 @@ const CreateProduct = () => {
       productData.append("category", category);
 
       const { data } = axios.post(
-        "http://localhost:8000/api/v1/vendor/create-product",
+        "https://print-mart-2.onrender.com/api/v1/vendor/create-product",
         productData
       );
       if (data?.success) {

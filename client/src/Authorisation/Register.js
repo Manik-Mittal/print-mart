@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Layout from '../Layout/Layout'
-import '/Users/manikmittal/Documents/print-mart/client/src/App.css'
+// import '/Users/manikmittal/Documents/print-mart/client/src/App.css'
 import { toast } from 'react-toastify'
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";

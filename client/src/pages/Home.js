@@ -20,7 +20,7 @@ const Home = () => {
   const getAllProducts = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(`http://localhost:8000/api/v1/vendor/get-products`);
+      const { data } = await axios.get(`https://print-mart-2.onrender.com/api/v1/vendor/get-products`);
       setLoading(false);
       setProducts(data.allProduct);
     } catch (error) {
