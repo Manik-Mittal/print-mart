@@ -5,8 +5,8 @@ import { useAuth } from '../context/auth'
 import axios, { all } from "axios";
 import { Checkbox, Radio } from "antd";
 import { Link } from "react-router-dom";
-import '/Users/manikmittal/Documents/print-mart/client/src/App.css'
-import '/Users/manikmittal/Documents/print-mart/client/src/style/home.css'
+// import '/Users/manikmittal/Documents/print-mart/client/src/App.css'
+import '../style/home.css'
 import { BiSolidCategory } from "react-icons/bi";
 const Home = () => {
   const navigate = useNavigate();
