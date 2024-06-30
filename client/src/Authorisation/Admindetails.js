@@ -20,7 +20,7 @@ const Admindetails = () => {
         e.preventDefault();
 
         try {
-            const res = await axios.post('/api/v1/vendor/register', {
+            const res = await axios.post('https://print-mart-2.onrender.com/api/v1/vendor/register', {
                 vendorName,
                 email,
                 password,

@@ -4,25 +4,25 @@ import { vendor } from "../models/vendor.model.js";
 import fs from "fs";
 
 
-export const createQuotation = async (req,res) => {
+export const createQuotation = async (req, res) => {
     try {
-        const {customerName,productName,vendorName,quantity,message,paperQuality,colorType,lamination,city} = req.fields;
-        const {pdf} = req.files;
-        if(!customerName){
+        const { customerName, productName, vendorName, quantity, message, paperQuality, colorType, lamination, city } = req.fields;
+        const { pdf } = req.files;
+        if (!customerName) {
             return res.status(404).json({
-                success:false,
+                success: false,
                 message: "Customer name cannot be empty"
             });
         }
-        if(!productName){
-            return res.status(404).json({success:false,message:"Product name cannot be empty"});
+        if (!productName) {
+            return res.status(404).json({ success: false, message: "Product name cannot be empty" });
         }
-        if(!vendorName){
-            return res.status(404).json({success:false,message:"Vendor name cannot be empty"});
+        if (!vendorName) {
+            return res.status(404).json({ success: false, message: "Vendor name cannot be empty" });
         }
         // creating the quotation
-        const quotation = new Quotation({...req.fields});
-        if(pdf){
+        const quotation = new Quotation({ ...req.fields });
+        if (pdf) {
             quotation.pdf.data = fs.readFileSync(pdf.path);
             quotation.pdf.contentType = pdf.type;
         }
@@ -31,20 +31,20 @@ export const createQuotation = async (req,res) => {
         // updating the user's order field
         const user = await User.findByIdAndUpdate(
             customerName,
-            {$push: {orders: quotation._id}},
-            {new : true}
+            { $push: { orders: quotation._id } },
+            { new: true }
         );
 
         // updating the vendor queries section
         const Vendor = await vendor.findByIdAndUpdate(
             vendorName,
-            {$push: { queries: { orderID: quotation._id,status: "PENDING"}}},
-            {new: true}
+            { $push: { queries: { orderID: quotation._id, status: "PENDING" } } },
+            { new: true }
         );
 
         res.status(200).json({
-            success:true,
-            message:"Quotation created successfully and added to user account successfully",
+            success: true,
+            message: "Quotation created successfully and added to user account successfully",
             quotation
         });
 
@@ -57,12 +57,12 @@ export const createQuotation = async (req,res) => {
     }
 }
 
-export const getQuotation = async (req,res) => {
+export const getQuotation = async (req, res) => {
     try {
         const foundQuotation = await Quotation.findById(req.params.id)
-        .populate('customerName').populate('productName').populate('vendorName');
-        if(!foundQuotation){
-            res.status(404).json({success: false, message: "Quotation not found"});
+            .populate('customerName').populate('productName').populate('vendorName');
+        if (!foundQuotation) {
+            res.status(404).json({ success: false, message: "Quotation not found" });
         }
         res.status(200).json({
             success: true,
@@ -100,13 +100,13 @@ export const getAllQuotation = async (req, res) => {
     }
 };
 
-export const getAllQuotationCustomer = async (req,res) => {
+export const getAllQuotationCustomer = async (req, res) => {
     try {
         // const {Vendor} = req.session.auth;
-        const {email} = req.params;
-        const cust = await User.findOne({email: email});
+        const { email } = req.params;
+        const cust = await User.findOne({ email: email });
         // console.log(vend);
-        const quotation = await Quotation.find({customerName: cust._id}).populate('customerName').populate('productName').populate('vendorName');
+        const quotation = await Quotation.find({ customerName: cust._id }).populate('customerName').populate('productName').populate('vendorName').sort({ createdAt: -1 });
         res.status(200).json({
             success: true,
             message: "All the quotation are",
@@ -117,6 +117,6 @@ export const getAllQuotationCustomer = async (req,res) => {
             success: false,
             message: error.message
         })
-        console.log("Error from the catch block: ",error);
+        console.log("Error from the catch block: ", error);
     }
 }

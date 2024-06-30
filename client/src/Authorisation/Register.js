@@ -16,7 +16,7 @@ const Register = () => {
 
     try {
 
-      const res = await axios.post('/api/v1/user/register', {
+      const res = await axios.post('https://print-mart-2.onrender.com/api/v1/user/register', {
         name,
         email,
         password,

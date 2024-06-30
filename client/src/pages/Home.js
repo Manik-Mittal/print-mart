@@ -64,10 +64,10 @@ const Home = () => {
 
   return (
     <Layout>
-      <div className='banner' style={{ position: 'relative' }}>
+      {/* <div className='banner' style={{ position: 'relative' }}>
 
 
-        <img src="/images/bg.png" style={{ width: '100vw', height: '92vh', opacity: 1 }} alt="Banner" />
+        <img src="/images/design.png" style={{ width: '100vw', height: '92vh', opacity: 1 }} alt="Banner" />
         <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 1, textAlign: 'center', color: 'white' }}>
           <h1 style={{ fontSize: '5rem' }} className="typewriter">PRINT YOUR VISION</h1>
           <p style={{ fontSize: '2.5rem' }} className="typewriter">Your one-stop solution for all printing needs</p>
@@ -77,6 +77,26 @@ const Home = () => {
           <a href="#servicesSection" className="btn btn-primary btn-lg">Explore Services</a>
         </div>
 
+        <div id="servicesSection"></div>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}></div>
+      </div> */}
+      <div className='banner' style={{ position: 'relative' }}>
+        <video
+          style={{ width: '100vw', height: '92vh', objectFit: 'cover' }}
+          autoPlay
+          loop
+          muted
+        >
+          <source src="/video.mp4" type="video/mp4" />
+
+        </video>
+        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 1, textAlign: 'center', color: 'white' }}>
+          <h1 style={{ fontSize: '5rem' }} className="typewriter">PRINT YOUR VISION</h1>
+          <p style={{ fontSize: '2.5rem' }} className="typewriter">Your one-stop solution for all printing needs</p>
+        </div>
+        <div style={{ position: 'absolute', bottom: '200px', left: '50%', transform: 'translateX(-50%)', zIndex: 1, textAlign: 'center' }}>
+          <a href="#servicesSection" className="btn btn-primary btn-lg">Explore Services</a>
+        </div>
         <div id="servicesSection"></div>
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}></div>
       </div>
@@ -124,7 +144,7 @@ const Home = () => {
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
               <div className="card m-2 d-flex flex-column" style={{ width: "18rem" }} key={p._id}>
-                <img src={`/api/v1/vendor/get-product-image/${p._id}`} className="card-img-top" style={{ width: "93%", objectFit: "cover", height: "180px" }} alt={p.name} />
+                <img src={`https://print-mart-2.onrender.com/api/v1/vendor/get-product-image/${p._id}`} className="card-img-top" style={{ width: "93%", objectFit: "cover", height: "180px" }} alt={p.name} />
                 <div className="card-body d-flex flex-column flex-grow-1">
                   <h5 className="card-title">{p.name}</h5>
                   <p className="card-text">{p.description}</p>

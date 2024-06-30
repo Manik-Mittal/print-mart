@@ -20,12 +20,12 @@ const RegisterAdmin = () => {
 
         try {
 
-            const res = await axios.post('/api/v1/user/register', {
-                name,
-                email,
-                password,
-                phone,
-                address,
+            const res = await axios.post('https://print-mart-2.onrender.com/api/v1/user/register', {
+                "name": name,
+                "email": email,
+                "password": password,
+                "phone": phone,
+                "address": address,
             });
 
             if (res && res.data.success) {
