@@ -80,6 +80,220 @@ register page styling
   padding-right: 3rem;
 }
 
+.auth-page {
+  min-height: 84vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 18px;
+  background:
+    linear-gradient(135deg, rgba(14, 79, 46, 0.08), rgba(11, 96, 176, 0.1)),
+    #fbfcfa;
+}
+
+.auth-panel {
+  width: min(980px, 100%);
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(320px, 1.1fr);
+  border: 1px solid rgba(2, 45, 26, 0.14);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 18px 48px rgba(14, 32, 24, 0.14);
+}
+
+.auth-panel-login {
+  width: min(880px, 100%);
+}
+
+.auth-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  padding: 48px 42px;
+  color: #ffffff;
+  background-position: center;
+  background-size: cover;
+}
+
+.auth-brand-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 1.8rem;
+}
+
+.auth-brand h1 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  line-height: 1.05;
+}
+
+.auth-brand p {
+  margin: 0;
+  max-width: 320px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.auth-card {
+  padding: 44px 42px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-eyebrow {
+  width: fit-content;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background-color: #eaf6ef;
+  color: #022d1a;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.auth-card h2 {
+  margin: 0;
+  color: #102018;
+  font-family: "Playfair Display", serif;
+  font-size: 2.35rem;
+  line-height: 1;
+}
+
+.auth-subtitle {
+  margin: -6px 0 6px;
+  color: #66726b;
+  line-height: 1.5;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #24382e;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.auth-input-wrap {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  border: 1px solid #d8e2dc;
+  border-radius: 8px;
+  background-color: #fbfdfc;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.auth-input-wrap:focus-within {
+  border-color: #198754;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.12);
+}
+
+.auth-input-wrap svg {
+  flex: 0 0 auto;
+  color: #0b60b0;
+  font-size: 1.22rem;
+}
+
+.auth-input-wrap input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #102018;
+  font-size: 0.98rem;
+}
+
+.auth-input-wrap input::placeholder {
+  color: #98a59e;
+}
+
+.auth-submit {
+  min-height: 48px;
+  margin-top: 6px;
+  border: 0;
+  border-radius: 8px;
+  background-color: #198754;
+  color: #ffffff;
+  font-weight: 700;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.auth-submit:hover {
+  background-color: #126c42;
+  transform: translateY(-1px);
+}
+
+.auth-secondary-action {
+  min-height: 44px;
+  border: 1px solid #b7d0c2;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #0b60b0;
+  font-weight: 700;
+}
+
+.auth-secondary-action:hover {
+  border-color: #0b60b0;
+  background-color: #eef7ff;
+}
+
+.auth-switch {
+  margin: 4px 0 0;
+  text-align: center;
+  color: #5d6b63;
+}
+
+.auth-switch a {
+  color: #0b60b0;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+  .auth-page {
+    align-items: flex-start;
+    padding: 28px 14px;
+  }
+
+  .auth-panel,
+  .auth-panel-login {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-brand {
+    min-height: 220px;
+    padding: 32px 24px;
+  }
+
+  .auth-brand h1 {
+    font-size: 2.25rem;
+  }
+
+  .auth-card {
+    padding: 30px 22px;
+  }
+}
+
 /* ************* */
 .nextpage {
 
@@ -234,6 +448,190 @@ margin-top: 10px; */
 .value-item {
   margin-bottom: 5px;
 
+}
+
+.seller-page {
+  min-height: 84vh;
+  background:
+    linear-gradient(135deg, rgba(14, 79, 46, 0.08), rgba(11, 96, 176, 0.1)),
+    #fbfcfa;
+  padding-bottom: 64px;
+}
+
+.seller-hero {
+  min-height: 270px;
+  display: flex;
+  align-items: center;
+  padding: 56px min(7vw, 86px);
+  color: #ffffff;
+  background-position: center;
+  background-size: cover;
+}
+
+.seller-hero-content {
+  width: min(700px, 100%);
+}
+
+.seller-eyebrow {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.14);
+  font-weight: 700;
+}
+
+.seller-hero h1 {
+  margin: 18px 0 10px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  line-height: 1;
+}
+
+.seller-hero p {
+  max-width: 520px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+.seller-profile,
+.seller-state {
+  width: min(1040px, calc(100% - 32px));
+  margin: -54px auto 0;
+}
+
+.seller-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.seller-summary,
+.seller-detail-card,
+.seller-about,
+.seller-state {
+  border: 1px solid #dfe9e3;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 16px 38px rgba(16, 32, 24, 0.1);
+}
+
+.seller-summary {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 28px;
+}
+
+.seller-avatar {
+  width: 86px;
+  height: 86px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0b60b0, #198754);
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.seller-summary span,
+.seller-detail-card span {
+  color: #198754;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.seller-summary h2 {
+  margin: 6px 0 8px;
+  color: #102018;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+}
+
+.seller-summary p,
+.seller-about p {
+  margin: 0;
+  color: #66726b;
+  line-height: 1.65;
+}
+
+.seller-details-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.seller-detail-card {
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px;
+}
+
+.seller-detail-card svg {
+  color: #0b60b0;
+  font-size: 2rem;
+}
+
+.seller-detail-card strong {
+  color: #102018;
+  font-size: 1rem;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.seller-about {
+  padding: 28px;
+}
+
+.seller-about h3 {
+  margin: 0 0 10px;
+  color: #102018;
+  font-size: 1.35rem;
+}
+
+.seller-state {
+  padding: 36px;
+  color: #66726b;
+  text-align: center;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .seller-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .seller-hero {
+    padding: 42px 18px 86px;
+  }
+
+  .seller-profile,
+  .seller-state {
+    width: min(100% - 24px, 1040px);
+  }
+
+  .seller-summary {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 22px;
+  }
+
+  .seller-details-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ******************************** */

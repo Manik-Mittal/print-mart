@@ -1,77 +1,108 @@
 import Layout from '../Layout/Layout'
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-// import '/Users/manikmittal/Documents/print-mart/client/src/App.css'
 import { useParams } from 'react-router-dom';
-
+import { BsPrinterFill } from "react-icons/bs";
+import { MdOutlineBadge, MdOutlineLocationOn, MdOutlinePinDrop, MdOutlineStorefront } from "react-icons/md";
 
 const Aboutseller = () => {
-  let p;
   const params = useParams();
+  const [seller, setSeller] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
-  const [pincode, setPincode] = useState();
-  const [gst, setGst] = useState("");
-  const [about, setAbout] = useState("");
-
-  const [details, setDetails] = useState([]);
-  const sellerDetails = async () => {
-    try {
-
-      const { data } = await axios.get(`https://print-mart-2.onrender.com/api/v1/vendor/get-vendor/${params.vendorName}`);
-      console.log(data, 5332)
-      console.log(data.fetchedVendor.vendorName, 123)
-
-      if (data?.success) {
-        setDetails(data);
-        console.log(details)
-        console.log(details, 'details');
-        setName(data.fetchedVendor.vendorName)
-        setAddress(data.fetchedVendor.address)
-        setPincode(data.fetchedVendor.pincode)
-        setGst(data.fetchedVendor.gstNo)
-        setAbout(data.fetchedVendor.about)
-
-
-
-
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
   useEffect(() => {
-    sellerDetails();
+    const sellerDetails = async () => {
+      try {
+        setLoading(true);
+        const { data } = await axios.get(`https://print-mart-2.onrender.com/api/v1/vendor/get-vendor/${params.vendorName}`);
 
-  }, []);
+        if (data?.success) {
+          setSeller(data.fetchedVendor);
+        }
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    sellerDetails();
+  }, [params.vendorName]);
+
+  const sellerName = seller?.vendorName || "Seller";
+  const initials = sellerName
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((word) => word[0])
+    .join("")
+    .toUpperCase();
+
   return (
     <Layout>
-      <h1 className='text-center'>Seller details</h1>
-      <div className="user-info">
-        <div className="field">
-          <div className="key">Name:</div>
-          <div className="key">Address:</div>
-          <div className="key">Pincode:</div>
-          <div className="key">Gst Number:</div>
-          <div className="key">About Seller:</div>
+      <main className="seller-page">
+        <section
+          className="seller-hero"
+          style={{ backgroundImage: 'linear-gradient(rgba(2, 45, 26, 0.84), rgba(11, 96, 176, 0.68)), url("/images/category.jpeg")' }}
+        >
+          <div className="seller-hero-content">
+            <span className="seller-eyebrow">
+              <BsPrinterFill />
+              Printing Partner
+            </span>
+            <h1>Seller details</h1>
+            <p>Review vendor information before sending your printing enquiry.</p>
+          </div>
+        </section>
 
+        {loading ? (
+          <div className="seller-state">Loading seller details...</div>
+        ) : !seller ? (
+          <div className="seller-state">Seller details are not available right now.</div>
+        ) : (
+          <section className="seller-profile">
+            <div className="seller-summary">
+              <div className="seller-avatar">{initials || "PM"}</div>
+              <div>
+                <span>Vendor profile</span>
+                <h2>{sellerName}</h2>
+                <p>{seller.about || "This seller has not added a detailed profile yet."}</p>
+              </div>
+            </div>
 
-        </div>
-        <div className="value field">
+            <div className="seller-details-grid">
+              <article className="seller-detail-card">
+                <MdOutlineStorefront />
+                <span>Business name</span>
+                <strong>{sellerName}</strong>
+              </article>
 
-          <div className="key">{name}</div>
-          <div className="key">{address}</div>
-          <div className="key">{pincode}</div>
-          <div className="key">{gst}</div>
-          <div className="key">{about}</div>
+              <article className="seller-detail-card">
+                <MdOutlineLocationOn />
+                <span>Address</span>
+                <strong>{seller.address || "Not provided"}</strong>
+              </article>
 
-        </div>
-      </div>
+              <article className="seller-detail-card">
+                <MdOutlinePinDrop />
+                <span>Pincode</span>
+                <strong>{seller.pincode || "Not provided"}</strong>
+              </article>
 
+              <article className="seller-detail-card">
+                <MdOutlineBadge />
+                <span>GST number</span>
+                <strong>{seller.gstNo || "Not provided"}</strong>
+              </article>
+            </div>
 
-
-
+            <div className="seller-about">
+              <h3>About seller</h3>
+              <p>{seller.about || "No additional seller description has been added."}</p>
+            </div>
+          </section>
+        )}
+      </main>
     </Layout>
   )
 }

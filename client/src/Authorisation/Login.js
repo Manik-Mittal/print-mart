@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import Layout from '../Layout/Layout';
 // import '/Users/manikmittal/Documents/print-mart/client/src/App.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useAuth } from "../context/auth";
+import { BsPrinterFill } from "react-icons/bs";
+import { MdOutlineEmail, MdLockOutline } from "react-icons/md";
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -44,13 +46,47 @@ const Login = () => {
 
     return (
         <Layout title={"Login Page"}>
-            <div className="register1" style={{ maxHeight: '50vh', marginTop: '20vh' }}>
-                <h1>Login</h1>
-                <form onSubmit={handleLogin}>
-                    <input type='text' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter Your Email' required />
-                    <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter Your Password' required />
-                    <button type="submit" className="btn btn-success">Login</button>
-                </form>
+            <div className="auth-page">
+                <section className="auth-panel auth-panel-login">
+                    <div
+                        className="auth-brand"
+                        style={{ backgroundImage: 'linear-gradient(rgba(2, 45, 26, 0.82), rgba(11, 96, 176, 0.72)), url("/images/category.jpeg")' }}
+                    >
+                        <div className="auth-brand-icon">
+                            <BsPrinterFill />
+                        </div>
+                        <h1>Welcome back</h1>
+                        <p>Sign in to manage enquiries, quotations, and printing orders.</p>
+                    </div>
+
+                    <form className="auth-card" onSubmit={handleLogin}>
+                        <span className="auth-eyebrow">Printing Mart</span>
+                        <h2>Login</h2>
+                        <p className="auth-subtitle">Use your registered email and password.</p>
+
+                        <label className="auth-field">
+                            <span>Email address</span>
+                            <div className="auth-input-wrap">
+                                <MdOutlineEmail />
+                                <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter your email' required />
+                            </div>
+                        </label>
+
+                        <label className="auth-field">
+                            <span>Password</span>
+                            <div className="auth-input-wrap">
+                                <MdLockOutline />
+                                <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter your password' required />
+                            </div>
+                        </label>
+
+                        <button type="submit" className="auth-submit">Login</button>
+
+                        <p className="auth-switch">
+                            New to Printing Mart? <Link to="/register">Create an account</Link>
+                        </p>
+                    </form>
+                </section>
             </div>
         </Layout>
     );
